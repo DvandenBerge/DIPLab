@@ -19,6 +19,8 @@ public class TipService {
     public void setCalculator(TipCalculator t){
         if(t instanceof TipCalculator){
             this.tipCalculator=t;
+        } else {
+            System.out.println("Illegal argument");
         }
     }
 }

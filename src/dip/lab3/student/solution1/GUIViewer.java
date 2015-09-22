@@ -6,9 +6,9 @@ import javax.swing.JOptionPane;
  *
  * @author dvandenberge
  */
-public class GUIWriter implements OutputWriter{
+public class GUIViewer implements Transmitter{
     @Override
-    public final void printMessage(InputReader reader){
+    public final void transmit(InputReader reader){
         JOptionPane.showMessageDialog(null,reader.getMessage());
     }
 }

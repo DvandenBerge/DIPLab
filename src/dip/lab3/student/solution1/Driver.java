@@ -12,8 +12,11 @@ public class Driver {
         
         InputReader reader1 = new KeyboardReader();
         InputReader reader2 = new FileReader(inputFile);
-        OutputWriter writer1 = new ConsoleWriter();
-        OutputWriter writer2 = new GUIWriter();
+        Transmitter writer1 = new ConsoleWriter();
+        Transmitter writer2 = new GUIViewer();
+        
+        //MessageService keyToConsole = new MessageService(reader1,writer1);
+        //keyToConsole.printMessage();
         
         //MessageService keyToGUI = new MessageService(reader1,writer2);
         //keyToGUI.printMessage();
@@ -23,6 +26,7 @@ public class Driver {
         
         MessageService fileToGUI = new MessageService(reader2,writer2);
         fileToGUI.printMessage();
+        
     }
     
 }

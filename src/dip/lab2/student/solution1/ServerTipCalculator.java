@@ -8,26 +8,26 @@ import java.util.Hashtable;
 public class ServerTipCalculator implements TipCalculator{
     
     private double bill;
-    private String serviceQuality;
+    private serviceQuality serviceQuality;
     
     private double goodRate=.20;
     private double fairRate=.15;
     private double poorRate=.10;
-    private final Hashtable<String,Double> TIP_PERCENT=new Hashtable<String,Double>();
+    private final Hashtable<serviceQuality,Double> TIP_PERCENT=new Hashtable<serviceQuality,Double>();
     
-    public ServerTipCalculator(double bill, String serviceQuality){
-        TIP_PERCENT.put("good",goodRate);
-        TIP_PERCENT.put("fair",fairRate);
-        TIP_PERCENT.put("poor",poorRate);
+    public ServerTipCalculator(double bill, serviceQuality sQ){
+        TIP_PERCENT.put(TipCalculator.serviceQuality.GOOD,goodRate);
+        TIP_PERCENT.put(TipCalculator.serviceQuality.FAIR,fairRate);
+        TIP_PERCENT.put(TipCalculator.serviceQuality.POOR,poorRate);
         this.bill=bill;
-        this.serviceQuality=serviceQuality;
+        this.serviceQuality=sQ;
     }
 
     public double getBill() {
         return bill;
     }
 
-    public String getServiceQuality() {
+    public serviceQuality getServiceQuality() {
         return serviceQuality;
     }
 
@@ -35,8 +35,8 @@ public class ServerTipCalculator implements TipCalculator{
         this.bill = bill;
     }
 
-    public void setServiceQuality(String serviceQuality) {
-        this.serviceQuality = serviceQuality;
+    public void setServiceQuality(serviceQuality sQ) {
+        this.serviceQuality = sQ;
     }
 
     public void setGoodRate(double goodRate) {

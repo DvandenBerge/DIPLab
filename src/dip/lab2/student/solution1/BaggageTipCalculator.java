@@ -13,25 +13,29 @@ import java.util.Hashtable;
  */
 public class BaggageTipCalculator implements TipCalculator{
     
+    private double goodRate=.20;
+    private double fairRate=.15;
+    private double poorRate=.10;
+    
     private int numberOfBags;
-    private String serviceQuality;
+    private serviceQuality serviceQuality;
     private final double baseTipPerBag=1;
     
-    private final Hashtable<String,Double> TIP_PERCENT=new Hashtable<String,Double>();
+    private final Hashtable<serviceQuality,Double> TIP_PERCENT=new Hashtable<serviceQuality,Double>();
     
-    public BaggageTipCalculator(int bags,String quality){
-        TIP_PERCENT.put("good",1.2);
-        TIP_PERCENT.put("fair",1.15);
-        TIP_PERCENT.put("poor",1.1);
+    public BaggageTipCalculator(int bags,serviceQuality sQ){
+        TIP_PERCENT.put(TipCalculator.serviceQuality.GOOD,goodRate);
+        TIP_PERCENT.put(TipCalculator.serviceQuality.FAIR,fairRate);
+        TIP_PERCENT.put(TipCalculator.serviceQuality.POOR,poorRate);
         this.numberOfBags=bags;
-        this.serviceQuality=quality;
+        this.serviceQuality=sQ;
     }
 
     public int getNumberOfBags() {
         return numberOfBags;
     }
 
-    public String getServiceQuality() {
+    public serviceQuality getServiceQuality() {
         return serviceQuality;
     }
 
@@ -43,8 +47,8 @@ public class BaggageTipCalculator implements TipCalculator{
         this.numberOfBags = numberOfBags;
     }
 
-    public void setServiceQuality(String serviceQuality) {
-        this.serviceQuality = serviceQuality;
+    public void setServiceQuality(serviceQuality sQ) {
+        this.serviceQuality = sQ;
     }
     
     

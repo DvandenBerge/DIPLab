@@ -13,6 +13,7 @@ public class FileReader implements InputReader{
     
     public FileReader(File file){
         this.file=file;
+        this.message="";
         this.setMessage();
     }
     
@@ -20,10 +21,10 @@ public class FileReader implements InputReader{
     public final void setMessage(){
         try{
             Scanner in=new Scanner(this.file);
+            String line="";
             while(in.hasNext()){
-                String line = in.nextLine();
-                this.message+=line+" ";
-                
+                line=in.nextLine();
+                this.message+=(line+" ");
             }
         }catch(IOException e){
             System.out.println("Error");

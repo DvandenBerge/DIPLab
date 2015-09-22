@@ -5,8 +5,8 @@ package dip.lab2.student.solution1;
  */
 public class Driver {
     public static void main(String[] args) {
-        TipCalculator calculator1 = new ServerTipCalculator(200,"good");
-        TipCalculator calculator2 = new BaggageTipCalculator(5,"fair");
+        TipCalculator calculator1 = new ServerTipCalculator(200,TipCalculator.serviceQuality.GOOD);
+        TipCalculator calculator2 = new BaggageTipCalculator(5,TipCalculator.serviceQuality.FAIR);
         
         TipService ts1 = new TipService(calculator1);
         System.out.println(ts1.getTip());

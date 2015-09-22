@@ -5,14 +5,19 @@ package dip.lab3.student.solution1;
  */
 public class MessageService {
     private InputReader reader;
-    private OutputWriter writer;
+    private Transmitter writer;
     
-    public MessageService(InputReader reader,OutputWriter writer){
+    /**
+     * 
+     * @param reader a keyboard reader or file reader is able to be passed into the MessageService, determining where the message comes from
+     * @param writer a console writer or GUI(JOptionPane) writer is able to be passed into MessageService, determining how the message is displayed
+     */
+    public MessageService(InputReader reader,Transmitter writer){
         this.reader=reader;
         this.writer=writer;
     }
     
     public void printMessage(){
-        writer.printMessage(reader);
+        writer.transmit(reader);
     }
 }
