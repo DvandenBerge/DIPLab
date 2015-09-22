@@ -17,7 +17,7 @@ public class FileReader implements InputReader{
     }
     
     @Override
-    public void setMessage(){
+    public final void setMessage(){
         try{
             Scanner in=new Scanner(this.file);
             while(in.hasNext()){
@@ -32,7 +32,7 @@ public class FileReader implements InputReader{
     }
     
     @Override
-    public String getMessage(){
+    public final String getMessage(){
         return this.message;
     }
 }

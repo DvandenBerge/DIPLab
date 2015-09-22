@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 public class GUIWriter implements OutputWriter{
     @Override
-    public void printMessage(InputReader reader){
+    public final void printMessage(InputReader reader){
         JOptionPane.showMessageDialog(null,reader.getMessage());
     }
 }

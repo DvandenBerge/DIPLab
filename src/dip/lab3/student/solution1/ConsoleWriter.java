@@ -7,7 +7,7 @@ package dip.lab3.student.solution1;
 public class ConsoleWriter implements OutputWriter{
     
     @Override
-    public void printMessage(InputReader reader){
+    public final void printMessage(InputReader reader){
         System.out.println(reader.getMessage());
     }
 }
