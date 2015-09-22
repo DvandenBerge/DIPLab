@@ -18,9 +18,11 @@ public class Driver {
         //MessageService keyToGUI = new MessageService(reader1,writer2);
         //keyToGUI.printMessage();
         
-        MessageService fileToConsole = new MessageService(reader2,writer1);
-        fileToConsole.printMessage();
+        //MessageService fileToConsole = new MessageService(reader2,writer1);
+        //fileToConsole.printMessage();
         
+        MessageService fileToGUI = new MessageService(reader2,writer2);
+        fileToGUI.printMessage();
     }
     
 }
