@@ -13,20 +13,17 @@ public class FileReader implements InputReader{
     
     public FileReader(File file){
         this.file=file;
-    }
-    
-    public FileReader(){
-        this.file=new File("Newfile.txt");
+        this.setMessage();
     }
     
     @Override
     public void setMessage(){
         try{
-            Scanner in=new Scanner(file);
-            
+            Scanner in=new Scanner(this.file);
             while(in.hasNext()){
                 String line = in.nextLine();
                 this.message+=line+" ";
+                
             }
         }catch(IOException e){
             System.out.println("Error");
