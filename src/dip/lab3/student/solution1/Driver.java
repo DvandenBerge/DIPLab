@@ -5,8 +5,12 @@ package dip.lab3.student.solution1;
  */
 public class Driver {
     public static void main(String[] args) {
-        KeyboardReader reader1 = new KeyboardReader();
-        
+        InputReader reader1 = new KeyboardReader();
+        InputReader reader2 = new FileReader();
+        OutputWriter writer1 = new ConsoleWriter();
+        OutputWriter writer2 = new GUIWriter();
+        MessageService keyToGUI = new MessageService(reader1,writer2);
+        keyToGUI.printMessage();
     }
     
 }

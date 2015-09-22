@@ -1,6 +1,7 @@
 package dip.lab3.student.solution1;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,23 @@ public class FileReader implements InputReader{
         this.file=file;
     }
     
+    public FileReader(){
+        this.file=new File("Newfile.txt");
+    }
+    
     @Override
-    public void setMessage() throws IOException{
-        Scanner in=new Scanner(file);
+    public void setMessage(){
+        try{
+            Scanner in=new Scanner(file);
+            
+            while(in.hasNext()){
+                String line = in.nextLine();
+                this.message+=line+" ";
+            }
+        }catch(IOException e){
+            System.out.println("Error");
+        }
+        
     }
     
     @Override
