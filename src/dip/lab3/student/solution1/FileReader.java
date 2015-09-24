@@ -10,26 +10,22 @@ import java.util.Scanner;
 public class FileReader implements InputReader{
     private String message;
     private File file;
+    private Scanner in;
     
-    public FileReader(File file){
+    public FileReader(File file) throws IOException{
         this.file=file;
+        this.in=new Scanner(this.file);
         this.message="";
         this.setMessage();
     }
     
     @Override
     public final void setMessage(){
-        try{
-            Scanner in=new Scanner(this.file);
-            String line="";
-            while(in.hasNext()){
-                line=in.nextLine();
-                this.message+=(line+" ");
-            }
-        }catch(IOException e){
-            System.out.println("Error");
-        }
-        
+        String line="";
+        while(in.hasNext()){
+            line=in.nextLine();
+            this.message+=(line+" ");
+        }    
     }
     
     @Override
